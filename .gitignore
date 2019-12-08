@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ignore to avoid merge conflicts in CodeRoad
+package-lock.json
+yarn.lock

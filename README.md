@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CodeRoad Tutorial React Starter
+
+This project is a working starter boilerplate for a React based CodeRoad tutorial.
+
+See [instructions for reverting back](#Revert-to-Create-React-App) to its original [Create React App](https://github.com/facebook/create-react-app) template.
 
 ## Available Scripts
 
@@ -26,16 +30,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
@@ -66,3 +60,35 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Revert to Create-React-App
+
+This project is slightly modified from the original create-react-app config in order to integrate with CodeRoad's testing tools. See react-app-rewired for details on how these modifications are implemented: https://github.com/timarney/react-app-rewired.
+
+If you're done with your CodeRoad course, feel free to revert back. Just follow the instructions below:
+
+1. delete the following file: `config.overrides.js`
+2. Remove unused packages by running the following:
+
+```shell
+npm uninstall react-app-rewired jest-tap-reporter
+```
+
+3. Revert the scripts in package.json back to their original formats:
+
+```json
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+		"test": "react-scripts test"
+	},
+```
+
+4. Remove the following lines from your `.gitignore` file. These should be enabled when publishing or sharing your application.
+
+```ms
+package-lock.json
+yarn.lock
+```
+
+Happy hacking!
